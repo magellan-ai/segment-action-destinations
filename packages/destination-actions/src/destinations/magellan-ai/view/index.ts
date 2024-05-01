@@ -13,7 +13,13 @@ const action: ActionDefinition<Settings, Payload> = {
       label: 'URL',
       description: 'The address of the page viewed',
       type: 'string',
-      default: { '@path': '$.context.page.url' },
+      default: {
+        '@if': {
+          exists: { '@path': '$.context.page.url' },
+          then: { '@path': '$.context.page.url' },
+          else: { '@path': '$.properties.url' }
+        }
+      },
       format: 'uri',
       required: true
     }
