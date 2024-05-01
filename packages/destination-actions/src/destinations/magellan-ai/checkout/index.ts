@@ -10,7 +10,7 @@ const action: ActionDefinition<Settings, Payload> = {
   description: 'This event tracks when a user goes to check out, regardless of whether they complete the purchase.',
   defaultSubscription: 'type = "track" and event = "Checkout Started"',
   fields: {
-    ...priceFields(),
+    ...priceFields('value'),
     ...orderInfoFields
   },
   perform: buildPerformer('checkout')

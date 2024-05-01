@@ -10,7 +10,7 @@ const action: ActionDefinition<Settings, Payload> = {
   description: 'Track lead generation, like signups, subscriptions, and notification requests.',
   defaultSubscription: 'type = "track" and event = "Signed Up"',
   fields: {
-    ...priceFields(),
+    ...priceFields('value'),
     id: {
       label: 'Lead ID',
       description: 'The unique ID for this generated lead',

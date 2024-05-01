@@ -1,6 +1,6 @@
 import { InputField } from '@segment/actions-core'
 
-export function priceFields(valueSource = 'value'): Record<string, InputField> {
+export function priceFields(valueSource = 'price'): Record<string, InputField> {
   return {
     value: {
       label: 'Value',
@@ -65,7 +65,7 @@ export const lineItemFields: Record<string, InputField> = {
 }
 
 export const productFields: Record<string, InputField> = {
-  ...priceFields('price'),
+  ...priceFields(),
   ...lineItemFields
 }
 
